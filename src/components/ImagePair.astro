@@ -1,0 +1,49 @@
+---
+// src/components/ImagePair.astro
+---
+<section class="image-pair-section">
+    <div class="container">
+        <div class="image-grid">
+            <img 
+                src="/collections/about1.jpg" 
+                alt="A designer sketching and painting a new wallpaper design" 
+                loading="lazy" 
+            />
+            <img 
+                src="/collections/about2.jpg" 
+                alt="High-tech Canon ink cartridges for quality printing" 
+                loading="lazy" 
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    .image-pair-section {
+        padding: 80px 0;
+        background-color: #fafafa;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Yan yana iki eşit sütun */
+        gap: 30px; /* Görseller arasındaki boşluk */
+    }
+
+    .image-grid img {
+        width: 100%; /* Sütunu tamamen doldur */
+        height: auto; /* En-boy oranını koru */
+        display: block; /* Altındaki olası boşlukları kaldır */
+    }
+
+    /* Mobil cihazlar için */
+    @media (max-width: 768px) {
+        .image-pair-section {
+            padding: 60px 0; /* Boşluğu biraz azalt */
+        }
+
+        .image-grid {
+            grid-template-columns: 1fr; /* Görselleri alt alta tek sütun yap */
+        }
+    }
+</style>

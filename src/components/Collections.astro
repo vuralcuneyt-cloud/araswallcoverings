@@ -1,0 +1,168 @@
+---
+// src/components/Collections.astro
+
+// Slider'da gösterilecek koleksiyonları burada bir liste olarak tanımlıyoruz.
+// Yeni resim eklemek için bu listeye eklemen yeterli.
+const collections = [
+  { name: 'p1', image: '/collections/product-1.jpg', link: 'https://www.wallnlove.com/portfolio/82484/'},
+  { name: 'p2', image: '/collections/product-2.jpg', link: 'https://www.wallnlove.com/portfolio/82484/' },
+  { name: 'p3', image: '/collections/product-3.jpg', link: 'https://www.wallnlove.com/portfolio/82484/' },
+  { name: 'p4', image: '/collections/product-4.jpg', link: '/link-to-p3-collection' },
+  { name: 'p5', image: '/collections/product-5.jpg', link: '/link-to-p3-collection' },
+  { name: 'p6', image: '/collections/product-6.jpg', link: '/link-to-p3-collection' },
+  { name: 'p7', image: '/collections/product-7.jpg', link: '/link-to-p3-collection' },
+  { name: 'p8', image: '/collections/product-8.jpg', link: '/link-to-p3-collection' },
+];
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section id="collections" class="collections-section">
+  <div class="container">
+    <h2 class="section-title">Wallpaper Collections</h2>
+    
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {collections.map(collection => (
+          <div class="swiper-slide">
+            {/* Link özelliğini 'href' içinde kullanıyoruz */}
+            <a href={collection.link}>
+                <img src={collection.image} alt={collection.name} loading="lazy" />
+                <p class="collection-name">{collection.name}</p>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="slider-controls">
+        <button class="slider-arrow button-prev">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="swiper-pagination"></div>
+        <button class="slider-arrow button-next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
+
+  const swiper = new Swiper('.swiper', {
+    modules: [Navigation, Pagination],
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+    navigation: {
+      nextEl: '.button-next',
+      prevEl: '.button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+  });
+</script>
+
+<style>
+  .collections-section {
+    padding: 80px 0;
+    background-color: #fafafa;
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 50px;
+  }
+  
+  .swiper {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 80px;
+  }
+
+  .swiper-slide a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+  .swiper-slide a:hover {
+      opacity: 0.85;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .collection-name {
+    font-family: inherit;
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+  }
+  
+  .slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+  }
+
+  .slider-arrow {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.2s;
+  }
+  
+  .slider-arrow:hover {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+  }
+  
+  .swiper-pagination {
+    position: static;
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0;
+  }
+  
+  /* --- SORUN 1'İN ÇÖZÜMÜ: Çubuğu ZORLA SİYAH YAPIYORUZ --- */
+  .swiper-pagination-progressbar-fill {
+    background: black !important;
+  }
+
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: black !important;
+  }
+
+</style>

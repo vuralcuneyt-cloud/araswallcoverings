@@ -1,0 +1,163 @@
+---
+// src/components/Services.astro
+---
+<section id="services" class="content-section">
+    <div class="container">
+
+        <!-- 1. GİRİŞ BÖLÜMÜ -->
+        <div class="intro-block">
+            <h2>How We Work?</h2>
+            <p>
+                In line with both our own designs and your design requests, we make the highest quality, completely ecological wall coverings from 36 different base materials for your homes and workplaces. Our primary principle is user satisfaction, and we are ready to realize your demands on both personal and corporate basis.
+            </p>
+        </div>
+
+        <!-- 2. SÜREÇ AKIŞI BÖLÜMÜ -->
+        <div class="process-flow">
+            <!-- ADIM 1 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                </div>
+                <h3>Roadmap & Consultation</h3>
+                <p>Before our team begins, we first determine our road map. We consult with our customers about their visuals, original designs, and specific requests to perfectly understand their vision.</p>
+            </div>
+
+            <!-- ADIM 2 -->
+            <div class="process-step">
+                <div class="step-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <h3>Samples & Clarification</h3>
+                <p>We share our sample works to clarify the customer's request. This ensures that the final product will match their expectations in texture, color, and quality.</p>
+            </div>
+
+            <!-- ADIM 3 -->
+            <div class="process-step">
+                <div class="step-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </div>
+                <h3>Visualization & Approval</h3>
+                <p>We provide before-and-after visuals to our customer. Only after receiving full approval do we proceed to the printing process, ensuring complete transparency.</p>
+            </div>
+
+            <!-- ADIM 4 -->
+            <div class="process-step">
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h3>Production & Success</h3>
+                <p>The entire process continues with the customer's full awareness. Thanks to our systematic work and constant communication, we achieve 100% success and satisfaction.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .content-section {
+        
+    }
+
+    /* Giriş Bloğu Stilleri */
+    .intro-block {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 80px auto; /* Ortala ve alt boşluk bırak */
+    }
+
+    .intro-block h2 {
+        margin-bottom: 20px;
+    }
+
+    .intro-block p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    /* Süreç Akışı Grid Stilleri */
+    .process-flow {
+        display: grid;
+        grid-template-columns: 1fr; /* Mobilde tek sütun */
+        gap: 40px;
+    }
+
+    .process-step {
+        background-color: #fff;
+        padding: 30px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .process-step:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--header-footer-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px auto;
+        color: var(--primary-color);
+    }
+    
+    .step-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .process-step h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+    .process-step p {
+        color: #555;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    /* Tablet ve masaüstü için grid yapısı */
+    @media (min-width: 768px) {
+        .process-flow {
+            /* 2x2'lik bir grid oluşturur */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .process-step {
+            text-align: left; /* Geniş ekranda yazılar sola yaslı daha iyi okunur */
+            padding: 40px;
+            display: grid;
+            grid-template-areas: 
+                "icon title"
+                "icon text";
+            grid-template-columns: auto 1fr;
+            gap: 0 25px; /* Sadece sütunlar arası boşluk */
+            align-items: start;
+        }
+        .step-icon {
+            grid-area: icon;
+            margin: 0;
+        }
+        .process-step h3 {
+            grid-area: title;
+            margin: 0 0 10px 0;
+        }
+        .process-step p {
+            grid-area: text;
+        }
+    }
+</style>

@@ -1,0 +1,180 @@
+---
+// src/components/About.astro
+---
+<section id="about" class="content-section">
+    <div class="container">
+        
+        <!-- 1. GİRİŞ BÖLÜMÜ -->
+        <h2>Who We Are?</h2>
+        <p class="intro-paragraph">
+            As Asrın Wallprint, we are a company that always aims for the best in its sector; we are a company that serves with high quality standards, environmentally friendly production and strong design staff. We have always aimed to be the best in this process, which we entered in the 2000s and became a brand in 2015, and we continue on our way by constantly developing in line with this purpose.
+        </p>
+
+        <!-- 2. MATERYAL LİSTESİ (İKONLU GRID) -->
+        <div class="materials-intro">
+            <p>With our Canon and HP printing machines, we carry thousands of original designs on <strong>36 different base materials</strong> and 5 different categories, with a monthly production of 20.000 m2.</p>
+        </div>
+        
+        <div class="materials-grid">
+            <div class="material-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M15.5 9.5c-1.5-1.5-3-1.5-4.5 0s-1.5 3 0 4.5 3 1.5 4.5 0"></path></svg>
+                </div>
+                <h3>Natural Products</h3>
+                <p>Cork and Grasscloth</p>
+            </div>
+            <div class="material-item">
+                <div class="icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.94 14.06c.46-.46.46-1.2 0-1.66l-3.61-3.61a1.18 1.18 0 0 0-1.66 0l-1.2 1.2-2.83-2.83 1.2-1.2a1.18 1.18 0 0 0 0-1.66L9.23 3.06a1.18 1.18 0 0 0-1.66 0L3.06 7.57a1.18 1.18 0 0 0 0 1.66l3.61 3.61 2.83 2.83-3.61 3.61a1.18 1.18 0 0 0 0 1.66l3.61 3.61a1.18 1.18 0 0 0 1.66 0l4.51-4.51z"></path></svg>
+                </div>
+                <h3>PVC Free</h3>
+                <p>Non-Woven</p>
+            </div>
+            <div class="material-item">
+                 <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                </div>
+                <h3>Vinyls</h3>
+                <p>Durable & Versatile</p>
+            </div>
+            <div class="material-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                </div>
+                <h3>Metalic Wallpapers</h3>
+                <p>Luxurious Finish</p>
+            </div>
+             <div class="material-item">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+                </div>
+                <h3>Glasstextile</h3>
+                <p>High Performance</p>
+            </div>
+        </div>
+
+        <!-- Basit bir ayırıcı çizgi -->
+        <hr class="divider">
+
+        <!-- 3. VİZYON & MİSYON (İKİLİ SÜTUN) -->
+        <div class="vision-mission-grid">
+            <div class="vision-mission-item">
+                <h3>Our Vision</h3>
+                <p>Help our customer to personalize any kind of living space you can imagine and make it more aesthetic & meaningful with presenting our creative and uniqe designes.</p>
+            </div>
+            <div class="vision-mission-item">
+                <h3>Our Mission</h3>
+                <p>As Asrın Wallprint, we are working to produce innovative and original designs using the highest quality materials and to provide the best service to our customers. We always see customer satisfaction as our priority and we work with this awareness. We offer a wide range of products to personalize all kinds of living spaces and produce solutions to suit the different preferences and needs of each of our customers.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Bu bölümdeki stiller SADECE About bölümü için geçerlidir */
+    .intro-paragraph, .materials-intro {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .materials-intro {
+        margin-top: -20px;
+        margin-bottom: 50px;
+    }
+
+    /* --- MATERYAL BÖLÜMÜ (FLEXBOX İLE DÜZELTİLDİ) --- */
+    .materials-grid {
+        display: flex;         /* Grid yerine Flexbox kullanıyoruz */
+        flex-wrap: wrap;       /* Elemanların alt satıra kaymasını sağlıyoruz */
+        justify-content: center; /* BU SİHİRLİ SATIR: Her satırı ortalıyor */
+        gap: 30px;             /* Kartlar arası boşluk */
+        margin-top: 40px;
+    }
+
+    .material-item {
+        flex-basis: 200px; /* Her kartın temel genişliği */
+        padding: 30px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .material-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .material-item .icon {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+    
+    .material-item .icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .material-item h3 {
+        margin: 0 0 5px 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    .material-item p {
+        font-size: 0.9rem;
+        color: #777;
+        margin: 0;
+    }
+    /* --- BİTTİ: MATERYAL BÖLÜMÜ DÜZELTMESİ --- */
+
+
+    /* Ayırıcı Çizgi Stili */
+    .divider {
+        border: 0;
+        height: 1px;
+        background-color: #eee;
+        margin: 80px auto;
+        max-width: 200px;
+    }
+
+    /* Vizyon & Misyon Grid Stilleri */
+    .vision-mission-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: left;
+    }
+
+    .vision-mission-item h3 {
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    .vision-mission-item h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background-color: var(--primary-color);
+    }
+    
+    .vision-mission-item p {content-section
+        color: #555;
+    }
+
+    @media (min-width: 768px) {
+        .vision-mission-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+    }
+</style>

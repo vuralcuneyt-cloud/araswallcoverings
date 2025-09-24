@@ -1,0 +1,149 @@
+---
+// src/components/Footer.astro
+---
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <!-- SÜTUN 1: SADECE LOGO -->
+            <div class="footer-column logo-column">
+                <a href="/" class="footer-logo">
+                    <img src="/logob.svg" alt="Aras Wallcoverings Logo" />
+                </a>
+            </div>
+
+            <!-- SÜTUN 2: ADRES (Büyük Harf Olmayan) -->
+            <div class="footer-column">
+                <h4>Find Us</h4>
+                <p class="address">
+                    Aras Wallcoverings Ltd<br>
+                    41 Iffley Road, London, W6 0PB<br>
+                    Company Number: 16465849<br>
+                    Companies House Sub. No. 107-407713
+                </p>
+                <p class="contact-links">
+                    <a href="tel:+447400211069">+44 7400 211069</a><br>
+                    <a href="mailto:info@araswallcoverings.co.uk">info@araswallcoverings.co.uk</a><br>
+                    <a href="https://www.wallnlove.com" target="_blank" rel="noopener noreferrer">www.wallnlove.com</a>
+                </p>
+            </div>
+
+            <!-- SÜTUN 3: COMPANY -->
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- SÜTUN 4: SOCIAL MEDIA -->
+            <div class="footer-column">
+                <h4>Social Media</h4>
+                <ul>
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://youtube.com" target="_blank">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {new Date().getFullYear()} Aras Wallcoverings. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        background-color: var(--header-footer-bg); 
+        color: var(--text-color);
+        padding: 60px 0 0 0;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .footer-grid {
+        display: grid;
+        /* --- KESİN ÇÖZÜM: 4 EŞİT SÜTUN --- */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        align-items: start;
+        padding-bottom: 40px;
+    }
+    
+    .logo-column {
+        /* Logo sütununun içeriğini ortalamak için (opsiyonel ama şık) */
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .footer-logo img {
+        height: 100px; /* Logoyu büyük ve belirgin yaptık */
+        width: auto;
+    }
+    
+    .footer-column h4 {
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-column a,
+    .contact-links a {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover,
+    .contact-links a:hover {
+        color: var(--text-color);
+    }
+    
+    .address {
+        margin: 0 0 1em 0;
+        color: #777;
+    }
+
+    .contact-links {
+        margin: 0;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #e0d9cf;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #999;
+    }
+    
+    /* TABLET İÇİN: 2x2 Grid */
+    @media (max-width: 900px) {
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+    }
+    
+    /* MOBİL İÇİN: Tek Sütun */
+    @media (max-width: 500px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

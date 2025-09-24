@@ -1,0 +1,51 @@
+---
+// src/components/VideoHero.astro
+
+// SENİN AYARLARIN AYNEN KALIYOR
+const YOUTUBE_VIDEO_ID = '6s2PH7O3EKY';
+// YouTube elementlerini gizlemeye yardımcı olan ekstra parametreler eklendi
+const youtubeSrc = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&controls=0&playlist=${YOUTUBE_VIDEO_ID}&modestbranding=1&showinfo=0&rel=0`;
+---
+
+<section class="video-section">
+    <div class="container">
+        <!-- BU KUTU, VİDEONUN İSTENMEYEN KENARLARINI KESECEK OLAN SİHİRLİ ÇERÇEVEDİR -->
+        <div class="video-wrapper">
+            <iframe
+                src={youtubeSrc}
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="YouTube background video"
+            ></iframe>
+        </div>
+    </div>
+</section>
+
+<style>
+    .video-section {
+        padding: 40px 0;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        /* 16:9 Oranı */
+        padding-bottom: 56.25%; 
+        height: 0;
+        /* --- İŞTE SİHİR BURADA: BU KUTUNUN DIŞINA TAŞAN HER ŞEYİ GİZLE --- */
+        overflow: hidden; 
+        border-radius: 8px;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        /* --- VİDEOYU BÜYÜTÜP, KENARLARDAKİ YOUTUBE ELEMENTLERİNİ DIŞARI TAŞIRIYORUZ --- */
+        top: 50%;
+        left: 50%;
+        width: 120%;  /* Genişliğini %120 yap */
+        height: 120%; /* Yüksekliğini %120 yap */
+        transform: translate(-50%, -50%); /* Büyütülmüş videoyu tekrar ortala */
+        pointer-events: none; /* Üzerine tıklanmasını engelle */
+    }
+</style>
